@@ -1,0 +1,21 @@
+name: testing workflows
+
+on:
+  workflow_dispatch:
+
+env:
+  google_cloud: GCP
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+
+    env:
+      Greeting: Hello
+
+    steps:
+      - name: "Say Hello Mona it's Saturday"
+        env:
+          First_Name: Vaibhav
+          cloud: AWS
+        run: echo "$Greeting $First_Name is using $cloud!"
